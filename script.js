@@ -25,3 +25,11 @@ function startStory() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("main").style.display = "block";
 }
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".memory").forEach(el => {
+    let pos = el.getBoundingClientRect().top;
+    if (pos < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+});
