@@ -1,13 +1,27 @@
 function playSong(id) {
   let audio = document.getElementById(id);
 
-  // Pause all other songs
-  let allAudio = document.querySelectorAll("audio");
-  allAudio.forEach(a => {
+  document.querySelectorAll("audio").forEach(a => {
     a.pause();
     a.currentTime = 0;
   });
 
-  // Play selected one
+  audio.volume = 0;
   audio.play();
+
+  // fade in
+  let vol = 0;
+  let fade = setInterval(() => {
+    if (vol < 1) {
+      vol += 0.05;
+      audio.volume = vol;
+    } else {
+      clearInterval(fade);
+    }
+  }, 200);
+}
+
+function startStory() {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("main").style.display = "block";
 }
