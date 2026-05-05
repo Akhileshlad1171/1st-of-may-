@@ -45,17 +45,6 @@ button {
 button:hover {
   background: #fc913a;
 }
-
-.memory {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 0.6s ease;
-}
-
-.memory.show {
-  opacity: 1;
-  transform: translateY(0);
-}
 #intro {
   position: fixed;   /* VERY IMPORTANT */
   top: 0;
