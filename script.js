@@ -20,10 +20,29 @@ function playSong(id) {
     }
   }, 200);
 }
+let current = 0;
+let memories = document.querySelectorAll(".memory");
+
+function showMemory(index) {
+  memories.forEach(m => m.classList.remove("active"));
+  memories[index].classList.add("active");
+}
+
+function nextMemory() {
+  current = (current + 1) % memories.length;
+  showMemory(current);
+}
+
+function prevMemory() {
+  current = (current - 1 + memories.length) % memories.length;
+  showMemory(current);
+}
 
 function startStory() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("main").style.display = "block";
+    memories = document.querySelectorAll(".memory"); // important
+  showMemory(0); // show first memory
 }
 window.addEventListener("scroll", () => {
   document.querySelectorAll(".memory").forEach(el => {
