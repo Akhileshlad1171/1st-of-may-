@@ -46,3 +46,23 @@ button:hover {
   opacity: 1;
   transform: translateY(0);
 }
+#intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+  cursor: pointer;
+}
+
+#intro h1 {
+  font-size: 3rem;
+}
+
+#intro span {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
